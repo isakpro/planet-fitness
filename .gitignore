@@ -1,0 +1,15 @@
+## Solution-level ignores (project-specific rules live in src/PlanetFitness.Web/.gitignore)
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# IDE
+.vs/
+.idea/
+*.user
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
