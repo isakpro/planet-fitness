@@ -2,5 +2,17 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Tranare>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = null;
+	Layout = "layout.cshtml";
+}
+<h1>Tränare: @Model.Name</h1>
+@Model.Presentation
+@if (Model.Specialomraden != null && Model.Specialomraden.Any())
+{
+	<p>Specialområden:</p>
+<ul>
+    @foreach (var specialomrade in Model.Specialomraden)
+    {
+        <li>@specialomrade</li>
+    }
+</ul>
 }
