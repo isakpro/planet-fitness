@@ -2,13 +2,25 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = null;
+    var metaTitel = Model.Value<string>("metaTitel");
+    if (metaTitel.IsNullOrWhiteSpace())
+    {
+        metaTitel = Model.Name;
+    }
+    
+    var metaDescription = Model.Value<string>("metaDescription");
 }
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Planet Fitness</title>
+    <title>@metaTitel - Planet Fitness</title>
+    @if (!metaDescription.IsNullOrWhiteSpace())
+    {
+        <meta name="description" content="@metaDescription">
+    }
 </head>
 <body>
     <header>
