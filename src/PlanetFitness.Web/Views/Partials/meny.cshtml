@@ -1,0 +1,9 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<nav aria-label="Huvudmeny">
+<ul>
+    @foreach (var sida in Model.Root().Children())
+    {
+        <li><a href="@sida.Url()">@sida.Name</a></li>
+    }
+</ul>
+</nav>
