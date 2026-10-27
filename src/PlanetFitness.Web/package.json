@@ -1,0 +1,17 @@
+{
+  "name": "planetfitness.web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass Styles/main.scss wwwroot/css/site.css",
+    "sass:watch": "sass --watch Styles/main.scss wwwroot/css/site.css"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.106.1"
+  }
+}
