@@ -2,5 +2,13 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Traningspass>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = null;
+	Layout = "layout.cshtml";
+}
+<h1>Träningspass: @Model.Name</h1>
+@Model.Beskrivning
+<p>@Model.DagOchTid</p>
+<p>@Model.Langd minuter</p>
+@if (Model.Tranare != null)
+{
+<p>Tränare: <a href="@Model.Tranare.Url()">@Model.Tranare.Name</a></p>
 }
