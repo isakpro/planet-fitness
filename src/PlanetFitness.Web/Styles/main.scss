@@ -1,4 +1,6 @@
 @use 'variabler' as *;
+@use 'bas' as *;
+@use 'layout' as *;
 
 body {
     color: $farg-primar;

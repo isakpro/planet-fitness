@@ -1,3 +1,13 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 body {
   color: #e63946;
 }
