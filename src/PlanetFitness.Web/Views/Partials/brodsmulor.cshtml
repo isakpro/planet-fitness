@@ -1,13 +1,13 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @if (Model.Ancestors().Any())
 {
-<nav aria-label="Brödsmulor">
-<ol>
-    @foreach (var sida in Model.Ancestors().Reverse())
-    {
-        <li><a href="@sida.Url()">@sida.Name</a></li>
-    }
-    <li aria-current="page">@Model.Name</li>
-</ol>
-</nav>
+    <nav class="brodsmulor" aria-label="Brödsmulor">
+        <ol>
+            @foreach (var sida in Model.Ancestors().Reverse())
+            {
+                <li><a href="@sida.Url()">@sida.Name</a></li>
+            }
+            <li aria-current="page">@Model.Name</li>
+        </ol>
+    </nav>
 }

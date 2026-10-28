@@ -1,0 +1,11 @@
+@use 'variabler' as *;
+
+header {
+    background-color: $farg-mork;
+    color: $farg-text-ljus;
+
+    a {
+    color: $farg-text-ljus;
+    text-decoration: none;
+    }
+}
