@@ -1,4 +1,12 @@
+@use 'variabler' as *;
+
 img {
     max-width: 100%;
     height: auto;
+}
+body {
+    background-color: $farg-bakgrund;
+    color: $farg-text;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
 }
