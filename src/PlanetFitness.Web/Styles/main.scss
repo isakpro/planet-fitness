@@ -3,5 +3,6 @@
 @use 'layout' as *;
 
 body {
-    color: $farg-primar;
+    background-color: $farg-bakgrund;
+    color: $farg-text;
 }
