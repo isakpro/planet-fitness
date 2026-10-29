@@ -11,3 +11,8 @@ body {
     line-height: 1.6;
     margin: 0;
 }
+:focus-visible {
+    outline: 3px solid $farg-guld;
+    outline-offset: 3px;
+    color: $farg-guld-mork;
+}

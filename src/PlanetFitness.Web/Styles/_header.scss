@@ -20,4 +20,7 @@ header {
         font-size: 1.25rem;
         font-weight: bold;
     }
+    :focus-visible {
+    outline-color: $farg-guld;
+}
 }

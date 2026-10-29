@@ -12,6 +12,12 @@ body {
   margin: 0;
 }
 
+:focus-visible {
+  outline: 3px solid #d4af37;
+  outline-offset: 3px;
+  color: #7a5c00;
+}
+
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -36,6 +42,9 @@ header .logo {
   color: #d4af37;
   font-size: 1.25rem;
   font-weight: bold;
+}
+header :focus-visible {
+  outline-color: #d4af37;
 }
 
 nav ul {
