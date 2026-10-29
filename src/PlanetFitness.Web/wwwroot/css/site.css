@@ -73,4 +73,22 @@ nav ul {
   color: #7a5c00;
 }
 
+.pass-lista {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.pass-kort {
+  background-color: #ffffff;
+  border: 1px solid #e5e0cc;
+  border-left: 4px solid #d4af37;
+  padding: 1rem;
+}
+.pass-kort p {
+  margin: 0.25rem 0;
+}
+
 /*# sourceMappingURL=site.css.map */

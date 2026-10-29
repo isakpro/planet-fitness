@@ -2,18 +2,25 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Sida>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "layout.cshtml";
-	var passLista = Model.Children<Traningspass>();
+    Layout = "layout.cshtml";
+    var passLista = Model.Children<Traningspass>();
 }
 <h1>@Model.Name</h1>
 <p>@Model.Ingress</p>
 @Model.Brodtext
 @if (passLista != null && passLista.Any())
 {
-<ul>
-    @foreach (var pass in passLista)
-    {
-        <li><a href="@pass.Url()">@pass.Name</a></li>
-    }
-</ul>
+    <ul class="pass-lista">
+        @foreach (var pass in passLista)
+        {
+            <li class="pass-kort">
+                <a href="@pass.Url()">@pass.Name</a>
+                <p>@pass.DagOchTid · @pass.Langd min</p>
+                @if (pass.Tranare != null)
+                {
+                    <p>Tränare: <a href="@pass.Tranare.Url()">@pass.Tranare.Name</a></p>
+                }
+            </li>
+        }
+    </ul>
 }
