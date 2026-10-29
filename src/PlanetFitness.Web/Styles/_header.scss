@@ -1,26 +1,33 @@
-@use 'variabler' as *;
+@use "variabler" as *;
 
 header {
-    background-color: $farg-mork;
-    color: $farg-text-ljus;
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: $farg-mork;
+  color: $farg-text-ljus;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    a {
+  a {
     color: $farg-text-ljus;
     text-decoration: none;
-    }
-    p {
+  }
+  p {
     margin: 0;
-    }
-    .logo {
-        color: $farg-guld;
-        font-size: 1.25rem;
-        font-weight: bold;
-    }
-    :focus-visible {
+  }
+
+  .logo {
+    color: $farg-guld;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  :focus-visible {
     outline-color: $farg-guld;
-}
+  }
 }

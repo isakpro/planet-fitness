@@ -1,4 +1,7 @@
 @use 'variabler' as *;
+* {
+    box-sizing: border-box;
+}
 
 img {
     max-width: 100%;
@@ -17,4 +20,5 @@ body {
 :focus-visible {
     outline: 3px solid $farg-guld-mork;
     outline-offset: 3px;
+    
 }
