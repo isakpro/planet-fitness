@@ -1,7 +1,7 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = null;
+    Layout = null;
     var metaTitel = Model.Value<string>("metaTitel");
     if (metaTitel.IsNullOrWhiteSpace())
     {
@@ -13,6 +13,7 @@
 
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <link rel="stylesheet" href="/css/site.css">
     <meta charset="utf-8">
@@ -23,14 +24,15 @@
         <meta name="description" content="@metaDescription">
     }
 </head>
+
 <body>
     <header>
-        <p>Planet Fitness</p>
+        <a href="/" class="logo">Planet Fitness</a>
         @await Html.PartialAsync("meny")
     </header>
 
     <main>
-     @await Html.PartialAsync("brodsmulor")
+        @await Html.PartialAsync("brodsmulor")
         @RenderBody()
     </main>
 
@@ -38,4 +40,5 @@
         <p>Planet Fitness</p>
     </footer>
 </body>
+
 </html>

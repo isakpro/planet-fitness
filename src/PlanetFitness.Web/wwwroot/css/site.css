@@ -32,6 +32,11 @@ header a {
 header p {
   margin: 0;
 }
+header .logo {
+  color: #d4af37;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
 
 nav ul {
   display: flex;
