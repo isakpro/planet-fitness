@@ -1,0 +1,7 @@
+@use 'variabler' as *;
+
+.footer {
+    background-color: $farg-mork;
+    border-top: 1px solid $farg-kant;
+    padding: 1rem;
+}
