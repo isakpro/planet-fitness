@@ -1,0 +1,19 @@
+@use 'variabler' as *;
+
+.pass-lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+.pass-kort {
+    background-color: $farg-yta;
+    border: 1px solid $farg-kant;
+    border-left: 4px solid $farg-guld;
+    padding: 1rem;
+
+    p {
+        margin: 0.25rem 0;
+    }
+}

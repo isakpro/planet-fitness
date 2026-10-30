@@ -5,6 +5,10 @@
 	Layout = "layout.cshtml";
 }
 <h1>Träningspass: @Model.Name</h1>
+@if (Model.Bild != null)
+{
+    <img src="@Model.Bild.Url()" alt="@Model.Name">
+}
 @Model.Beskrivning
 <p>@Model.DagOchTid</p>
 <p>@Model.Langd minuter</p>

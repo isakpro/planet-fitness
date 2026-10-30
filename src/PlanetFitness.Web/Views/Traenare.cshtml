@@ -5,6 +5,10 @@
 	Layout = "layout.cshtml";
 }
 <h1>Tränare: @Model.Name</h1>
+@if (Model.Bild != null)
+{
+<img src="@Model.Bild.Url()" alt="@Model.Name">
+}
 @Model.Presentation
 @if (Model.Specialomraden != null && Model.Specialomraden.Any())
 {
