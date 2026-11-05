@@ -17,8 +17,21 @@ body {
     display: flex;
     flex-direction: column;
 }
+h1, h2, h3 {
+    color: $farg-guld;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+}
+a {
+    color: $farg-guld;
+
+    &:hover {
+        color: $farg-guld-ljus;
+    }
+}
 :focus-visible {
-    outline: 3px solid $farg-guld-mork;
+    outline: 3px solid $farg-guld;
     outline-offset: 3px;
-    
+
 }
