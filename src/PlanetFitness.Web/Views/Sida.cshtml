@@ -14,7 +14,7 @@
         @foreach (var pass in passLista)
         {
             <li class="pass-kort">
-                <a href="@pass.Url()">@pass.Name</a>
+                <h2><a href="@pass.Url()">@pass.Name</a></h2>
                 <p>@pass.DagOchTid · @pass.Langd min</p>
                 @if (pass.Tranare != null)
                 {
