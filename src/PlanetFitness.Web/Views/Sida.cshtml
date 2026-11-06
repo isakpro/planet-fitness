@@ -4,6 +4,7 @@
 @{
     Layout = "layout.cshtml";
     var passLista = Model.Children<Traningspass>();
+    var tranarLista = Model.Children<Tranare>();
 }
 <h1>@Model.Name</h1>
 <p class="ingress">@Model.Ingress</p>
@@ -21,6 +22,27 @@
                 @if (pass.Tranare != null)
                 {
                     <p>Tränare: <a href="@pass.Tranare.Url()">@pass.Tranare.Name</a></p>
+                }
+            </li>
+        }
+    </ul>
+}
+@if (tranarLista != null && tranarLista.Any())
+{
+    <ul class="tranar-lista">
+        @foreach (var tranare in tranarLista)
+        {
+            <li class="tranar-kort">
+                <a href="@tranare.Url()">
+                    @if (tranare.Bild != null)
+                    {
+                        <img src="@tranare.Bild.GetCropUrl(width: 600, furtherOptions: "&format=webp")" alt="@tranare.Name">
+                    }
+                    <h2>@tranare.Name</h2>
+                </a>
+                @if (tranare.Specialomraden != null && tranare.Specialomraden.Any())
+                {
+                    <p>@string.Join(" · ", tranare.Specialomraden)</p>
                 }
             </li>
         }
