@@ -3,14 +3,22 @@
 header {
   background-color: $farg-mork;
   color: $farg-text-ljus;
-  padding: 1rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   a {
     color: $farg-text-ljus;
+    font-size: 1.1rem;
     text-decoration: none;
+
+    &:hover {
+      color: $farg-guld;
+    }
   }
   p {
     margin: 0;
@@ -18,8 +26,9 @@ header {
 
   .logo {
     color: $farg-guld;
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
   }
 
   @media (max-width: 600px) {

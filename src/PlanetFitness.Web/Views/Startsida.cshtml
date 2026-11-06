@@ -4,10 +4,16 @@
 @{
 	Layout = "layout.cshtml";
 }
-<h1>@Model.Name</h1>
-@if (Model.HeroBild != null)
-{
-    <img src="@Model.HeroBild.Url()" alt="@Model.HeroBild.Name">
-}
-<p>@Model.Ingress</p>
-@Model.Brodtext
+<div class="detalj">
+    @if (Model.HeroBild != null)
+    {
+        <img class="detalj-bild" src="@Model.HeroBild.GetCropUrl(width: 1200, furtherOptions: "&format=webp")" alt="@Model.HeroBild.Name">
+    }
+    <div class="detalj-text">
+        <h1>@Model.Name</h1>
+        <p class="ingress">@Model.Ingress</p>
+        <div class="brodtext">
+            @await Html.PartialAsync("brodtext", Model.Brodtext)
+        </div>
+    </div>
+</div>

@@ -4,15 +4,19 @@
 @{
 	Layout = "layout.cshtml";
 }
-<h1>Träningspass: @Model.Name</h1>
-@if (Model.Bild != null)
-{
-    <img src="@Model.Bild.Url()" alt="@Model.Name">
-}
-@Model.Beskrivning
-<p>@Model.DagOchTid</p>
-<p>@Model.Langd minuter</p>
-@if (Model.Tranare != null)
-{
-<p>Tränare: <a href="@Model.Tranare.Url()">@Model.Tranare.Name</a></p>
-}
+<div class="detalj">
+    @if (Model.Bild != null)
+    {
+        <img class="detalj-bild" src="@Model.Bild.GetCropUrl(width: 1200, furtherOptions: "&format=webp")" alt="@Model.Name">
+    }
+    <div class="detalj-text">
+        <h1>Träningspass: @Model.Name</h1>
+        @Model.Beskrivning
+        <p>@Model.DagOchTid</p>
+        <p>@Model.Langd minuter</p>
+        @if (Model.Tranare != null)
+        {
+            <p>Tränare: <a href="@Model.Tranare.Url()">@Model.Tranare.Name</a></p>
+        }
+    </div>
+</div>

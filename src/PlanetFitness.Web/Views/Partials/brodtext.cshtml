@@ -1,0 +1,37 @@
+@using System.Text.RegularExpressions
+@using Umbraco.Cms.Core.Media
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Strings
+@model IHtmlEncodedString?
+@inject IImageUrlGenerator ImageUrlGenerator
+@{
+    var html = Model?.ToHtmlString() ?? "";
+
+    html = Regex.Replace(html, @"<img [^>]*>", img =>
+    {
+        var bild = img.Value;
+
+        // Bilderna i texten hämtas i hög upplösning som webp så att de blir skarpa i full bredd
+        bild = Regex.Replace(bild, @"src=""(/media/[^""?]+)\?[^""]*""", match =>
+        {
+            var url = ImageUrlGenerator.GetImageUrl(new ImageUrlGenerationOptions(match.Groups[1].Value)
+            {
+                Width = 1920,
+                ImageCropMode = ImageCropMode.Max,
+                FurtherOptions = "format=webp"
+            });
+            return $"src=\"{System.Net.WebUtility.HtmlEncode(url)}\"";
+        });
+
+        // Breda bilder (liggande affischer) visas kant i kant över hela skärmen
+        var bredd = Regex.Match(bild, @"width=""(\d+)""");
+        var hojd = Regex.Match(bild, @"height=""(\d+)""");
+        if (bredd.Success && hojd.Success && double.Parse(bredd.Groups[1].Value) / double.Parse(hojd.Groups[1].Value) >= 1.4)
+        {
+            bild = bild.Replace("<img ", "<img class=\"fullbredd\" ");
+        }
+
+        return bild;
+    });
+}
+@Html.Raw(html)

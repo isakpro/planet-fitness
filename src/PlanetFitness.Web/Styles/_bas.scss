@@ -10,15 +10,36 @@ img {
 body {
     background-color: $farg-bakgrund;
     color: $farg-text;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin: 0;
     min-height: 100vh;
+    overflow-x: clip;
     display: flex;
     flex-direction: column;
 }
+h1, h2, h3 {
+    color: $farg-guld;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+}
+h1 {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    margin: 0.25rem 0 0.25rem;
+}
+a {
+    color: $farg-guld;
+
+    &:hover {
+        color: $farg-guld-ljus;
+    }
+}
 :focus-visible {
-    outline: 3px solid $farg-guld-mork;
+    outline: 3px solid $farg-guld;
     outline-offset: 3px;
-    
+
 }
