@@ -3,19 +3,26 @@
 .pass-lista {
     list-style: none;
     padding: 0;
+    margin: 2rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
 }
 .pass-kort {
     background-color: $farg-yta;
-    border: 1px solid $farg-kant;
-    border-left: 4px solid $farg-guld;
-    padding: 1rem;
+    border: 2px solid $farg-guld;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba($farg-guld, 0.25);
+    }
 
     h2 {
-        font-size: 1.1rem;
-        margin: 0 0 0.5rem;
+        font-size: 1.2rem;
+        margin: 0 0 0.75rem;
     }
 
     p {

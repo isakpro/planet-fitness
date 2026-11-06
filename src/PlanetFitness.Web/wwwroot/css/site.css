@@ -163,20 +163,26 @@ nav ul {
 .pass-lista {
   list-style: none;
   padding: 0;
+  margin: 2rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
 }
 
 .pass-kort {
   background-color: #1a1a1a;
-  border: 1px solid #3a3220;
-  border-left: 4px solid #d4af37;
-  padding: 1rem;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pass-kort:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
 }
 .pass-kort h2 {
-  font-size: 1.1rem;
-  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  margin: 0 0 0.75rem;
 }
 .pass-kort p {
   margin: 0.25rem 0;
