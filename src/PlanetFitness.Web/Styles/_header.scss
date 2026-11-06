@@ -3,14 +3,23 @@
 header {
   background-color: $farg-mork;
   color: $farg-text-ljus;
+  border-bottom: 2px solid $farg-guld;
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   a {
     color: $farg-text-ljus;
+    font-weight: 600;
     text-decoration: none;
+
+    &:hover {
+      color: $farg-guld;
+    }
   }
   p {
     margin: 0;
@@ -18,8 +27,9 @@ header {
 
   .logo {
     color: $farg-guld;
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
   }
 
   @media (max-width: 600px) {
