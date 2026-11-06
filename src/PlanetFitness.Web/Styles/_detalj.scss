@@ -3,7 +3,7 @@
 // Bild och text bredvid varandra, t.ex. på startsidan, tränare och pass
 .detalj {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     gap: 3rem;
     align-items: start;
     margin-top: 1rem;

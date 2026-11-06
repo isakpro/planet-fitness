@@ -7,7 +7,7 @@
 <div class="detalj">
     @if (Model.Bild != null)
     {
-        <img class="detalj-bild" src="@Model.Bild.GetCropUrl(width: 900, furtherOptions: "&format=webp")" alt="@Model.Name">
+        <img class="detalj-bild" src="@Model.Bild.GetCropUrl(width: 1200, furtherOptions: "&format=webp")" alt="@Model.Name">
     }
     <div class="detalj-text">
         <h1>Träningspass: @Model.Name</h1>
