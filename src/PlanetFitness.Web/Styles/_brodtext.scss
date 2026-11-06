@@ -1,0 +1,50 @@
+@use 'variabler' as *;
+
+.ingress {
+    font-size: 1.2rem;
+    max-width: 70ch;
+}
+
+.brodtext {
+    p, ul, ol {
+        max-width: 70ch;
+    }
+
+    p:has(> img) {
+        max-width: none;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        border-top: 2px solid $farg-guld;
+        border-bottom: 2px solid $farg-guld;
+    }
+
+    // Flera bilder i samma stycke, t.ex. grundarna på Om oss
+    p:has(> img + img) {
+        font-size: 0;
+
+        img {
+            display: inline-block;
+            width: calc(25% - 0.75rem);
+            margin: 0 1rem 1rem 0;
+            border: 2px solid $farg-guld;
+            border-radius: 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @media (max-width: 700px) {
+                width: calc(50% - 0.5rem);
+
+                &:nth-of-type(2n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

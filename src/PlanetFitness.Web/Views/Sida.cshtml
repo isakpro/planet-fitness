@@ -6,8 +6,10 @@
     var passLista = Model.Children<Traningspass>();
 }
 <h1>@Model.Name</h1>
-<p>@Model.Ingress</p>
-@Model.Brodtext
+<p class="ingress">@Model.Ingress</p>
+<div class="brodtext">
+    @await Html.PartialAsync("brodtext", Model.Brodtext)
+</div>
 @if (passLista != null && passLista.Any())
 {
     <ul class="pass-lista">

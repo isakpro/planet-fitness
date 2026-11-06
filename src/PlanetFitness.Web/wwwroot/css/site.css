@@ -119,6 +119,47 @@ nav ul {
   color: #d4af37;
 }
 
+.ingress {
+  font-size: 1.2rem;
+  max-width: 70ch;
+}
+
+.brodtext p, .brodtext ul, .brodtext ol {
+  max-width: 70ch;
+}
+.brodtext p:has(> img) {
+  max-width: none;
+}
+.brodtext img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border-top: 2px solid #d4af37;
+  border-bottom: 2px solid #d4af37;
+}
+.brodtext p:has(> img + img) {
+  font-size: 0;
+}
+.brodtext p:has(> img + img) img {
+  display: inline-block;
+  width: calc(25% - 0.75rem);
+  margin: 0 1rem 1rem 0;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+}
+.brodtext p:has(> img + img) img:last-child {
+  margin-right: 0;
+}
+@media (max-width: 700px) {
+  .brodtext p:has(> img + img) img {
+    width: calc(50% - 0.5rem);
+  }
+  .brodtext p:has(> img + img) img:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+
 .pass-lista {
   list-style: none;
   padding: 0;
