@@ -4,19 +4,23 @@
 @{
 	Layout = "layout.cshtml";
 }
-<h1>Tränare: @Model.Name</h1>
-@if (Model.Bild != null)
-{
-<img src="@Model.Bild.Url()" alt="@Model.Name">
-}
-@Model.Presentation
-@if (Model.Specialomraden != null && Model.Specialomraden.Any())
-{
-	<p>Specialområden:</p>
-<ul>
-    @foreach (var specialomrade in Model.Specialomraden)
+<div class="detalj">
+    @if (Model.Bild != null)
     {
-        <li>@specialomrade</li>
+        <img class="detalj-bild" src="@Model.Bild.GetCropUrl(width: 900, furtherOptions: "&format=webp")" alt="@Model.Name">
     }
-</ul>
-}
+    <div class="detalj-text">
+        <h1>Tränare: @Model.Name</h1>
+        @Model.Presentation
+        @if (Model.Specialomraden != null && Model.Specialomraden.Any())
+        {
+            <p>Specialområden:</p>
+            <ul>
+                @foreach (var specialomrade in Model.Specialomraden)
+                {
+                    <li>@specialomrade</li>
+                }
+            </ul>
+        }
+    </div>
+</div>
