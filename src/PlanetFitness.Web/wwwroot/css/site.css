@@ -142,10 +142,13 @@ nav ul {
   border-bottom: 2px solid #d4af37;
 }
 .brodtext img.fullbredd {
-  width: 100vw;
+  width: auto;
   max-width: 100vw;
-  max-height: none;
-  margin: 2.5rem 0 2.5rem calc(50% - 50vw);
+  max-height: max(20rem, 100vh - 20rem);
+  margin: 2.5rem 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .brodtext p:has(> img + img) {
   font-size: 0;
