@@ -2,16 +2,12 @@
 
 .ingress {
     font-size: 1.2rem;
-    max-width: 70ch;
+    margin: 0 0 1rem;
 }
 
 .brodtext {
-    p, ul, ol {
-        max-width: 70ch;
-    }
-
-    p:has(> img) {
-        max-width: none;
+    p {
+        margin: 0 0 0.75rem;
     }
 
     img {
@@ -30,8 +26,9 @@
     img.fullbredd {
         width: auto;
         max-width: 100vw;
-        max-height: max(20rem, calc(100vh - 20rem));
-        margin: 2.5rem 0;
+        max-height: max(20rem, calc(100vh - 14.5rem));
+        margin: 0 0 1.25rem;
+        border: 0;
         position: relative;
         left: 50%;
         transform: translateX(-50%);

@@ -11,8 +11,8 @@ img {
 body {
   background-color: #0d0d0d;
   color: #f0ede4;
-  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 1.05rem;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
   min-height: 100vh;
@@ -22,7 +22,8 @@ body {
 }
 
 h1, h2, h3 {
-  color: #d4af37;
+  color: #ffc61a;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -31,23 +32,23 @@ h1, h2, h3 {
 
 h1 {
   font-size: clamp(2rem, 5vw, 3.25rem);
-  margin: 0.5rem 0 1rem;
+  margin: 0.25rem 0 0.25rem;
 }
 
 a {
-  color: #d4af37;
+  color: #ffc61a;
 }
 a:hover {
-  color: #f0d77a;
+  color: #ffe27a;
 }
 
 :focus-visible {
-  outline: 3px solid #d4af37;
+  outline: 3px solid #ffc61a;
   outline-offset: 3px;
 }
 
 main {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
   flex: 1;
   width: 100%;
@@ -57,8 +58,7 @@ main {
 header {
   background-color: #000000;
   color: #f5f5f5;
-  border-bottom: 2px solid #d4af37;
-  padding: 1rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,20 +68,20 @@ header {
 }
 header a {
   color: #f5f5f5;
-  font-weight: 600;
+  font-size: 1.1rem;
   text-decoration: none;
 }
 header a:hover {
-  color: #d4af37;
+  color: #ffc61a;
 }
 header p {
   margin: 0;
 }
 header .logo {
-  color: #d4af37;
-  font-size: 1.5rem;
+  color: #ffc61a;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  font-size: 1.75rem;
   font-weight: 800;
-  text-transform: uppercase;
 }
 @media (max-width: 600px) {
   header {
@@ -90,7 +90,7 @@ header .logo {
   }
 }
 header :focus-visible {
-  outline-color: #d4af37;
+  outline-color: #ffc61a;
 }
 
 nav ul {
@@ -110,6 +110,7 @@ nav ul {
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
+  margin: 0.75rem 0 0;
 }
 .brodsmulor li + li::before {
   content: "›";
@@ -117,19 +118,16 @@ nav ul {
   color: #a8a294;
 }
 .brodsmulor a {
-  color: #d4af37;
+  color: #ffc61a;
 }
 
 .ingress {
   font-size: 1.2rem;
-  max-width: 70ch;
+  margin: 0 0 1rem;
 }
 
-.brodtext p, .brodtext ul, .brodtext ol {
-  max-width: 70ch;
-}
-.brodtext p:has(> img) {
-  max-width: none;
+.brodtext p {
+  margin: 0 0 0.75rem;
 }
 .brodtext img {
   display: block;
@@ -138,14 +136,15 @@ nav ul {
   max-height: 85vh;
   height: auto;
   margin: 2rem auto;
-  border-top: 2px solid #d4af37;
-  border-bottom: 2px solid #d4af37;
+  border-top: 2px solid #ffc61a;
+  border-bottom: 2px solid #ffc61a;
 }
 .brodtext img.fullbredd {
   width: auto;
   max-width: 100vw;
-  max-height: max(20rem, 100vh - 20rem);
-  margin: 2.5rem 0;
+  max-height: max(20rem, 100vh - 14.5rem);
+  margin: 0 0 1.25rem;
+  border: 0;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -157,7 +156,7 @@ nav ul {
   display: inline-block;
   width: calc(25% - 0.75rem);
   margin: 0 1rem 1rem 0;
-  border: 2px solid #d4af37;
+  border: 2px solid #ffc61a;
   border-radius: 8px;
 }
 .brodtext p:has(> img + img) img:last-child {
@@ -188,9 +187,9 @@ nav ul {
 
 .detalj-bild {
   width: 100%;
-  border: 2px solid #d4af37;
+  border: 2px solid #ffc61a;
   border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 10px 40px rgba(255, 198, 26, 0.15);
 }
 
 .detalj-text h1 {
@@ -200,13 +199,13 @@ nav ul {
   padding-left: 1.25rem;
 }
 .detalj-text li::marker {
-  color: #d4af37;
+  color: #ffc61a;
 }
 
 .pass-lista {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
@@ -214,26 +213,27 @@ nav ul {
 
 .pass-kort {
   background-color: #1a1a1a;
-  border: 2px solid #d4af37;
-  border-radius: 8px;
-  padding: 1.25rem;
+  border: 3px solid #ffc61a;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 12px rgba(255, 198, 26, 0.15);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .pass-kort:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 6px 24px rgba(255, 198, 26, 0.35);
 }
 .pass-kort h2 {
-  font-size: 1.2rem;
-  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem;
 }
 .pass-kort p {
-  margin: 0.25rem 0;
+  margin: 0.4rem 0;
 }
 
 footer {
   background-color: #000000;
-  border-top: 1px solid #d4af37;
+  border-top: 1px solid #ffc61a;
   padding: 1rem;
   color: #f5f5f5;
 }
