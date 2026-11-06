@@ -3,7 +3,8 @@
 // Bild och text bredvid varandra, t.ex. på startsidan, tränare och pass
 .detalj {
     display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    // Bildkolumnen är högst lika bred som skärmen är hög, så att hela bilden syns utan att scrolla
+    grid-template-columns: minmax(0, min(60%, calc(100vh - 8rem))) minmax(0, 1fr);
     gap: 3rem;
     align-items: start;
     margin-top: 1rem;
