@@ -7,16 +7,31 @@
 @{
     var html = Model?.ToHtmlString() ?? "";
 
-    // Bilderna i texten hämtas i hög upplösning som webp så att de blir skarpa i full bredd
-    html = Regex.Replace(html, @"src=""(/media/[^""?]+)\?[^""]*""", match =>
+    html = Regex.Replace(html, @"<img [^>]*>", img =>
     {
-        var url = ImageUrlGenerator.GetImageUrl(new ImageUrlGenerationOptions(match.Groups[1].Value)
+        var bild = img.Value;
+
+        // Bilderna i texten hämtas i hög upplösning som webp så att de blir skarpa i full bredd
+        bild = Regex.Replace(bild, @"src=""(/media/[^""?]+)\?[^""]*""", match =>
         {
-            Width = 1600,
-            ImageCropMode = ImageCropMode.Max,
-            FurtherOptions = "format=webp"
+            var url = ImageUrlGenerator.GetImageUrl(new ImageUrlGenerationOptions(match.Groups[1].Value)
+            {
+                Width = 1920,
+                ImageCropMode = ImageCropMode.Max,
+                FurtherOptions = "format=webp"
+            });
+            return $"src=\"{System.Net.WebUtility.HtmlEncode(url)}\"";
         });
-        return $"src=\"{System.Net.WebUtility.HtmlEncode(url)}\"";
+
+        // Breda bilder (liggande affischer) visas kant i kant över hela skärmen
+        var bredd = Regex.Match(bild, @"width=""(\d+)""");
+        var hojd = Regex.Match(bild, @"height=""(\d+)""");
+        if (bredd.Success && hojd.Success && double.Parse(bredd.Groups[1].Value) / double.Parse(hojd.Groups[1].Value) >= 1.4)
+        {
+            bild = bild.Replace("<img ", "<img class=\"fullbredd\" ");
+        }
+
+        return bild;
     });
 }
 @Html.Raw(html)

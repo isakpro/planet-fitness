@@ -25,6 +25,14 @@
         border-bottom: 2px solid $farg-guld;
     }
 
+    // Liggande affischer går kant i kant över hela skärmen
+    img.fullbredd {
+        width: 100vw;
+        max-width: 100vw;
+        max-height: none;
+        margin: 2.5rem 0 2.5rem calc(50% - 50vw);
+    }
+
     // Flera bilder i samma stycke, t.ex. grundarna på Om oss
     p:has(> img + img) {
         font-size: 0;
